@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Drum Kit</title>
+    <link rel="stylesheet" href="../Assets/bootstrap/css/bootswatch.min.css">
+    <style>
+        .drum-img{
+            height: 400px;
+        }
+        .keyE{
+            top: 178px;
+            left: 15px;
+        }
+        .keyR{
+            top: 178px;
+            left: 95px;
+        }
+        .keyG{
+            top: 250px;
+            left: 130px;
+        }
+        .keyV{
+            top: 360px;
+            left: 290px;
+        }
+        .keyA{
+            top: 190px;
+            left: 230px;
+        }
+        .keyS{
+            top: 190px;
+            left: 340px;
+        }
+        .keyD{
+            top: 260px;
+            left: 450px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="drum-box vh-100 d-flex align-items-center position-relative">
+                    <img src="img/drum.png" alt="drum" class="drum-img">
+                    <span class="position-absolute bg-dark keyE rounded kit" id="kitE"><kbd>E</kbd></span>
+                    <span class="position-absolute bg-dark keyR rounded kit" id="kitR"><kbd>R</kbd></span>
+                    <span class="position-absolute bg-dark keyG rounded kit" id="kitG"><kbd>G</kbd></span>
+                    <span class="position-absolute bg-dark keyV rounded kit" id="kitV"><kbd>V</kbd></span>
+                    <span class="position-absolute bg-dark keyA rounded kit" id="kitA"><kbd>A</kbd></span>
+                    <span class="position-absolute bg-dark keyS rounded kit" id="kitS"><kbd>S</kbd></span>
+                    <span class="position-absolute bg-dark keyD rounded kit" id="kitD"><kbd>D</kbd></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="../Assets/jquery/jquery.js"></script>
+<script src="../Assets/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        function play(audio){
+            let a = new Audio(`data/${audio}.wav`);
+            a.play();
+        }
+
+        $(document).keydown(function (e){
+            if (e.key == "e"){
+                play("d1");
+            }else if(e.key == "r"){
+                play("d1");
+            }else if(e.key == "g"){
+                play("d2");
+            }else if(e.key == "v"){
+                play("d1");
+            }else if(e.key == "a"){
+                play("d3");
+            }else if(e.key == "s"){
+                play("d1");
+            }else if(e.key == "d"){
+                play("d2");
+            }
+        })
+
+    </script>
+</body>
+</html>
